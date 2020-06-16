@@ -1,12 +1,43 @@
-Here you will find some jupyter notebooks, explaining how to work with the existing local dask cluster. 
-To connect to it use the following lines of code 
+Here you find some jupyter notebooks, explaining how to work with the existing local dask cluster and also a short tutorial on how to create your own conda environments. 
+
+DASK
+Dask.distributed is a lightweight library for distributed computing in Python, making computation in the cloud more resource efficient. If possible we recomend that you utilize this cluster to speed up your calculation tasks.
+
+To connect to the dask-cluster use the following lines of code 
 
 from dask.distributed import Client
 c = Client('192.168.17.5:8786')
 c
 
-If you need any additional packages you can install them right in your notebook with
+ENVIRONMENTS
+If you want to create your own conda environments follow the following steps: 
 
-!pip install
+1. copy the "environments.condarc" file to your home directory and rename it in ".condarc"
 
-But beware, at the moment these packages do not persist inbetween sessions.
+
+2. Create an environment, for this we will follow the example of a tensorflow environment. Open a terminal window in your Jupyter hub and use the following commands.
+
+conda create --name tensorflow
+
+
+3. Activate that environment: 
+
+conda activate tensorflow
+
+
+4. Install the wanted packages
+
+conda install -c conda-forge tensorflow
+
+
+5. Install ipykernel
+
+conda install -c anaconda ipykernel
+
+
+6. Add the environment to your jupyter notebook
+
+python -m ipykernel install --user --name=tensorflow
+
+
+Now you should see a new environment in your notebook. 
