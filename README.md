@@ -1,5 +1,7 @@
 Here you find some jupyter notebooks, explaining how to work with the existing local dask cluster and also a short tutorial on how to create your own conda environments. 
 
+If you want to chose a differnt image go to /hub/home stop your server and restart it with the image of your choice
+
 DASK
 Dask.distributed is a lightweight library for distributed computing in Python, making computation in the cloud more resource efficient. If possible we recomend that you utilize this cluster to speed up your calculation tasks.
 
@@ -8,6 +10,7 @@ To connect to the dask-cluster use the following lines of code
 from dask.distributed import Client
 c = Client('192.168.17.5:8786')
 c
+
 
 ENVIRONMENTS
 If you want to create your own conda environments follow the following steps: 
