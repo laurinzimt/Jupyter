@@ -25,7 +25,7 @@ conda create --name tensorflow
 
 3. Activate that environment: 
 
-conda activate tensorflow
+source activate tensorflow
 
 
 4. Install the wanted packages
